@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Football Stadiums Ranked</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
+
+
+<link rel="stylesheet" href="css/map2.css">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<h1> Largest Football Stadiums in the United States (by capacity) </h1>
+
+
+		<div id="mapid"></div>
+
+		<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+		<script src="js/places.js"></script>
+
+			<script>
+
+					var mymap = L.map('mapid').setView([39.079249, -96.560963], 3.89
+);
+
+					L.tileLayer('https://api.mapbox.com/styles/v1/dreshenriq/ck2zg1g9s011q1crks4suwb99/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZHJlc2hlbnJpcSIsImEiOiJjazJ6ZnlueGkwMmRrM2Nuc3preTU3MzNmIn0.rFdmj85GjbpiBZnd7IuRPg', {
+				    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+				    maxZoom: 18
+					}).addTo(mymap);
+
+					for ( let i = 0; i < places.length; i++ ) {
+						L.marker( [ places[i].Latitude, places[i].Longitude ] )
+						.bindPopup( '<p>' + places[i].placeName + '</p>' + '<h3>' + places[i].Capacity + '</h3>')
+						.addTo( mymap );
+					}
+
+
+		</script>
+
+				<p> This map was created by Andres S. Henriquez. This map pinpoints the twenty largest football stadiums in the US. This includes both NFL and NCAA teams. The Washington Redskins' Fedex Field holds the largest amount of people for any football stadium in the US with a whopping 91,665 person capacity! </p>
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

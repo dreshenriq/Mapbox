@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Vancouver Hotspots</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
+
+
+<link rel="stylesheet" href="css/first_map.css">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<h1> Must Eats in Vancouver, Canada </h1>
+
+
+		<div id="mapid"></div>
+
+		<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+			<script>
+
+					var mymap = L.map('mapid').setView([49.275443, -123.111277], 12.83);
+
+					L.tileLayer('https://api.mapbox.com/styles/v1/dreshenriq/ck2zg1g9s011q1crks4suwb99/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZHJlc2hlbnJpcSIsImEiOiJjazJ6ZnlueGkwMmRrM2Nuc3preTU3MzNmIn0.rFdmj85GjbpiBZnd7IuRPg', {
+				    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+				    maxZoom: 18
+					}).addTo(mymap);
+
+					var marker0nuba = L.marker([49.287130,-123.117020]).addTo(mymap);
+					var marker1bluewater = L.marker([49.276169, -123.121126]).addTo(mymap);
+					var marker2cadeaux = L.marker([49.283170,-123.100810]).addTo(mymap);
+					var marker3miku = L.marker([49.286828, -123.112584]).addTo(mymap);
+
+
+
+					marker0nuba.bindPopup("<b>Nuba</b><br>Cool lebanese cuisine on the basement floor.").openPopup();
+					marker1bluewater.bindPopup("<b>Blue Water Cafe</b><br>Fresh and sustainable seafood!").openPopup();
+					marker2cadeaux.bindPopup("<b>Cadeaux Bakery</b><br>It's like eating a croissaint straight from France..").openPopup();
+					marker3miku.bindPopup("<b>Miku</b><br>Phenomenal sushi, though pricey.").openPopup();
+
+		</script>
+
+				<p> This map was created by Andres S. Henriquez. The author traveled to Vancouver, British Columbia, Canada during the Spring of 2019. There, he ate some of the tastiest and freshest food that has ever graced his palette. Some of these restaurants are pinned on the map. Hopefully, you will be able to travel to Vancouver and one day try these restaurants out.</p>
+
+
+</div>
+
+
+
+</body>
+
+
+</html>
